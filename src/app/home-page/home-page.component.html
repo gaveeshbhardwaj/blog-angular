@@ -1,0 +1,22 @@
+<div class="container-fluid" style="margin-top:-20px;height: 400px;background-image: url('../assets/images/blog.png')"></div>
+<br>
+<div class="col-sm-3">
+  <app-category [categories]="categories" (getCategory)="getCategory($event)"></app-category>
+</div>
+<div class="col-sm-5">{{heading}}
+  <div class="col-sm-12">
+    <form class="navbar-form" role="search">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" (keyup)="search(srch.value)" #srch>
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <app-show-blogs [data]="data" (rateStar)="rateStar($event)"></app-show-blogs>
+</div>
+<div class="col-sm-4">
+  <app-create-form [categories]="categories" (newBlog)="newBlog($event)"></app-create-form>
+</div>
+<router-outlet></router-outlet>

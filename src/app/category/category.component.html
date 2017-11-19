@@ -1,0 +1,16 @@
+<style type="text/css">
+  .list-group-item{
+    transition: all 0.3s;
+  }
+  .list-group-item:hover{
+    background-color: rgba(0,0,0,0.3);
+    color: #dddddd;
+  }
+</style>
+<div class="list-group">
+  <a href="#" class="list-group-item active" style="background: #333333;border: none;">Categories</a>
+  <a class="list-group-item" *ngFor="let category of categories" (click)="getcategory(category)">{{category}}</a>
+  <a class="list-group-item active" style="background: #333333;border: none;" (click)="getcategory('All')">All</a><br>
+  <a class="list-group-item active" style="background: #333333;border: none;" (click)="getcategory('Favourites')">Favourites</a>
+
+</div>

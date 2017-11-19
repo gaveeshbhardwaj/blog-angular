@@ -1,0 +1,82 @@
+<div class="container">
+
+  <div class="well form-horizontal" style="background:#333333;color: aliceblue;border-radius: 25px 15px" id="contact_form" >
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend style="color: aliceblue">Create a Blog Now!</legend>
+
+      <!-- Text input-->
+      {{errorMsg}}
+      <div class="form-group" style="padding-left: 10px;padding-right:10px;">
+        <label class="control-label">Name</label>
+        <div class="inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  name="first_name" placeholder="Author Name" class="form-control"  type="text" #author>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Select Basic -->
+
+      <div class="form-group" style="padding-left: 10px;padding-right:10px;">
+        <label class="control-label">Category</label>
+        <div class=" selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+            <select name="state" class="form-control selectpicker" #category>
+              <option value="">Select Blog Category</option>
+              <option value="{{category}}" *ngFor="let category of categories">{{category}}</option>
+
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Text input-->
+      <div class="form-group" style="padding-left: 10px;padding-right:10px;">
+        <label class="control-label">Title</label>
+        <div class="inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            <input name="website" placeholder="Blog Title" class="form-control" type="text" #title>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text area -->
+
+      <div class="form-group" style="padding-left: 10px;padding-right:10px;">        <label class=" control-label">Content</label>
+        <div class="inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            <textarea class="form-control" name="comment" placeholder="Blog Content Here..." #content></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="padding-left: 10px;padding-right:10px;">
+        <label class=" control-label">Upload Image:</label>
+        <div class="inputGroupContainer">
+          <div class="input-group" style="width: 100%">
+            <input type="file" id="upload" class="btn" style="color:black;width: 100%;background-color: white;" #logo>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Button -->
+      <div class="form-group" style="padding-left: 10px;padding-right:10px;">
+        <label class="control-label"></label>
+        <div class="">
+          <button (click)="getformdata(title.value,author.value,category.value,content.value,logo.files)"  class="btn" style="width: 100%;">Send <span class="glyphicon glyphicon-send"></span></button>
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+</div>
+<!-- /.container -->

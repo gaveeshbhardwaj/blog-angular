@@ -1,0 +1,5 @@
+.input-group-addon{
+  background-color: #006e7a;
+}
+
+#upload input.form_submit { background:ButtonFace; color:ButtonText; border:2px outset ButtonFace; }
